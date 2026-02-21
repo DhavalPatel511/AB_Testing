@@ -191,17 +191,14 @@ Open `visualizations/main_result.html` in your browser to see the interactive co
 
 ### Main Result: Conversion Rate Comparison
 
-![Conversion Rate Comparison](https://claude.ai/chat/screenshots/main_result.png)
 *Desktop converts 4.80% vs Mobile 3.98% (p=0.029)*
 
 ### Business Impact: Revenue Opportunity
 
-![Revenue Impact](https://claude.ai/chat/screenshots/revenue_impact.png)
 *$17,400 annual revenue opportunity from mobile optimization*
 
 ### Segmentation: Lift by Traffic Source
 
-![Segment Analysis](https://claude.ai/chat/screenshots/segment_analysis.png)
 *Organic traffic shows highest desktop advantage (+35%)*
 
 ---
