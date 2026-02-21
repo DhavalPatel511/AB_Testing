@@ -62,7 +62,7 @@ This project demonstrates end-to-end A/B testing methodology by analyzing real e
 ### Tools & Technologies
 
 ```
-Python 3.10+ • BigQuery • SQL • Git
+Python 3.10+ • BigQuery • SQL • Git • streamlit
 scipy • statsmodels • plotly • pandas • numpy
 ```
 
@@ -112,21 +112,16 @@ If mobile conversion matched desktop:
 ├── requirements.txt               # Python dependencies
 ├── LICENSE                        # MIT License
 ├── .gitignore                     # Git ignore rules
-│
+├── dashboard.py│
 ├── data/
 │   └── google_merch_users.csv     # Processed user-level data
 │
 ├── scripts/
-│   ├── ab_test_analysis.py        # Core statistical analysis
-│   ├── create_visualizations.py   # Interactive charts (Plotly)
-│   ├── validation_checks.py       # Data quality checks
-│   ├── guardrail_check.py         # Secondary metrics validation
-│   └── segment_analysis.py        # Traffic source segmentation
-│
-├── visualizations/
-│   ├── main_result.html           # Conversion rate comparison
-│   ├── revenue_impact.html        # Business impact chart
-│   └── segment_analysis.html      # Lift by traffic source
+│   ├── ab_test_analysis.ipynb        # Core statistical analysis
+│   ├── create_visualizations.ipynb # Interactive charts (Plotly)
+│   ├── validation_checks.ipynb # Data quality checks
+│   ├── guardrail_check.ipynb # Secondary metrics validation
+│   └── segment_analysis.ipynb # Traffic source segmentation
 │
 ├── results/
 │   ├── test_results.json          # Complete statistical results
@@ -181,25 +176,30 @@ python scripts/validation_checks.py
 python scripts/bayesian_analysis.py
 ```
 
-### View Results
 
-Open `visualizations/main_result.html` in your browser to see the interactive comparison chart.
+### 🎨 Interactive Dashboard (Recommended)
 
----
+**Launch the live dashboard** for an interactive experience:
 
-## 📊 Visualizations
+bash
 
-### Main Result: Conversion Rate Comparison
+```bash
+# Install Streamlit (one-time)
+pip install streamlit
 
-*Desktop converts 4.80% vs Mobile 3.98% (p=0.029)*
+# Run the dashboard
+streamlit run dashboard.py
+```
 
-### Business Impact: Revenue Opportunity
+ **Opens browser at `http://localhost:8501` with** :
 
-*$17,400 annual revenue opportunity from mobile optimization*
+* 📊 Real-time metrics cards (Desktop CR, Mobile CR, Lift, Revenue)
+* 📈 Interactive Plotly charts (hover, zoom, explore)
+* 💰 Adjustable business impact calculator
+* 🎯 Automated recommendations
+* 📋 Raw data viewer and export functionality
 
-### Segmentation: Lift by Traffic Source
-
-*Organic traffic shows highest desktop advantage (+35%)*
+ **Perfect for** : Demonstrations, presentations, and exploring the data interactively
 
 ---
 
@@ -277,6 +277,7 @@ This project was created to demonstrate:
 * **Business acumen** (ROI calculation, prioritization, action items)
 * **Technical skills** (Python, SQL, BigQuery, statistical libraries)
 * **Communication** (clear explanations for technical and non-technical audiences)
+* **Data visualization** (interactive dashboards with Streamlit, Plotly charts)
 
  **Ideal for** : Data Science, Analytics, Product Analytics, or Growth Analytics roles
 
