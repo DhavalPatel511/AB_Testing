@@ -1,0 +1,12 @@
+pandas
+numpy
+plotly
+matplotlib
+scipy<1.11
+statsmodels
+pymc
+arviz
+google-cloud-bigquery
+jupyter
+ipykernel
+db-dtypes
