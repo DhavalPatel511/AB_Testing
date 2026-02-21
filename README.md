@@ -45,7 +45,6 @@ This project demonstrates end-to-end A/B testing methodology by analyzing real e
 * **Power Analysis** : Pre-test sample size calculation (achieved 79.8% power)
 * **Effect Size** : Cohen's h, absolute and relative differences
 * **Confidence Intervals** : 95% CI for difference in proportions
-* **Bayesian Statistics** : Beta-Binomial conjugate prior model (validation)
 
 ### Data Engineering
 
@@ -64,7 +63,7 @@ This project demonstrates end-to-end A/B testing methodology by analyzing real e
 
 ```
 Python 3.10+ • BigQuery • SQL • Git
-scipy • statsmodels • pymc • arviz • plotly • pandas • numpy
+scipy • statsmodels • plotly • pandas • numpy
 ```
 
 ---
@@ -105,44 +104,37 @@ If mobile conversion matched desktop:
 
 ✅ No extreme outliers affecting results
 
-✅ Bayesian analysis confirms Frequentist findings
-
 ---
 
 ## 📁 Repository Structure
 
-```
 ├── README.md                      # This file
-├── EXECUTIVE_SUMMARY.md           # Business-focused 2-page summary
-├── METHODOLOGY.md                 # Detailed statistical methodology
-├── INTERVIEW_PREP.md              # Common interview Q&A
+├── requirements.txt               # Python dependencies
+├── LICENSE                        # MIT License
+├── .gitignore                     # Git ignore rules
 │
 ├── data/
 │   └── google_merch_users.csv     # Processed user-level data
 │
 ├── scripts/
 │   ├── ab_test_analysis.py        # Core statistical analysis
-│   ├── create_visualizations.py   # Interactive charts
-│   ├── validation_checks.py       # Data quality validation
-│   ├── guardrail_check.py         # Secondary metrics check
-│   ├── segment_analysis.py        # Traffic source segmentation
-│   └── bayesian_analysis.py       # Bayesian validation
+│   ├── create_visualizations.py   # Interactive charts (Plotly)
+│   ├── validation_checks.py       # Data quality checks
+│   ├── guardrail_check.py         # Secondary metrics validation
+│   └── segment_analysis.py        # Traffic source segmentation
 │
 ├── visualizations/
 │   ├── main_result.html           # Conversion rate comparison
-│   ├── revenue_impact.html        # Business impact visualization
-│   ├── segment_analysis.html      # Lift by traffic source
-│   └── bayesian_posterior.html    # Posterior distribution
+│   ├── revenue_impact.html        # Business impact chart
+│   └── segment_analysis.html      # Lift by traffic source
 │
 ├── results/
 │   ├── test_results.json          # Complete statistical results
 │   ├── guardrail_check.json       # Guardrail metrics status
-│   ├── segment_analysis.json      # Segment breakdown
-│   └── bayesian_result.json       # Bayesian inference results
+│   └── segment_analysis.json      # Segment breakdown details
 │
 └── notebooks/
     └── exploratory_analysis.ipynb # Initial data exploration
-```
 
 ---
 
@@ -246,15 +238,6 @@ where SE = √[p̂(1-p̂) × (1/n₁ + 1/n₂)]
 * **Actual sample** : Desktop = 5,234 ✓, Mobile = 3,521 ≈
 * **Achieved power** : 79.8% (slightly under target)
 
-### Bayesian Validation
-
-* **Model** : Beta-Binomial with conjugate prior
-* **Prior** : Beta(2, 98) [weakly informative, ~2% expected CR]
-* **Result** : P(Desktop > Mobile) = 97.5%
-* **Conclusion** : Confirms Frequentist result
-
----
-
 ## 💡 Recommendations
 
 ### Immediate Actions (0-30 days)
@@ -288,32 +271,17 @@ where SE = √[p̂(1-p̂) × (1/n₁ + 1/n₂)]
 
 ---
 
-## ⚠️ Limitations & Caveats
+## 🤝 About This Project
 
-### Study Limitations
+This project was created to demonstrate:
 
-1. **Observational Study** : Not a randomized controlled experiment
+* **End-to-end A/B testing** expertise (design → analysis → recommendations)
+* **Statistical rigor** (power analysis, effect size, validation)
+* **Business acumen** (ROI calculation, prioritization, action items)
+* **Technical skills** (Python, SQL, BigQuery, statistical libraries)
+* **Communication** (clear explanations for technical and non-technical audiences)
 
-* Users self-select devices based on context and intent
-* Potential confounding variables (demographics, use case)
-
-1. **Historical Data** : November 2020 - January 2021
-
-* Includes holiday shopping season (may not generalize)
-* Mobile technology has improved since data collection
-
-1. **External Validity** : Google Merchandise Store specific
-
-* Results may not transfer to other product categories
-* Validate with your own data before major investments
-
-### Statistical Caveats
-
-* Mobile sample slightly underpowered (79.8% vs 80% target)
-* Minimum detectable effect (0.88pp) close to observed effect (0.82pp)
-* Multiple segment comparisons increase false positive risk
-
----
+ **Ideal for** : Data Science, Analytics, Product Analytics, or Growth Analytics roles
 
 ## 📝 License
 
@@ -325,7 +293,6 @@ This project is licensed under the MIT License.
 
 * **Data Source** : [Google Analytics 4 BigQuery Public Dataset](https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset)
 * **Statistical Methods** : Inspired by *Trustworthy Online Controlled Experiments* (Kohavi et al.)
-* **Bayesian Approach** : Based on *Statistical Rethinking* (McElreath)
 
 ---
 
